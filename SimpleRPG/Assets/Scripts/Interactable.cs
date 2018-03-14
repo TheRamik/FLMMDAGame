@@ -23,9 +23,18 @@ public class Interactable : MonoBehaviour {
             if (playerAgent.remainingDistance <= playerAgent.stoppingDistance)
             {
                 Interact();
+                EnsureLookDirection();
                 hasInteracted = true;
             }
         }
+    }
+
+    void EnsureLookDirection()
+    {
+        playerAgent.updateRotation = false;
+        Vector3 lookDirection = new Vector3(transform.position.x, playerAgent.transform.position.y, transform.position.z);
+        playerAgent.transform.LookAt(lookDirection);
+        playerAgent.updateRotation = true;
     }
 
     public virtual void Interact()
