@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour {
 
     private void Start()
     {
-        PlayerCameraDistance = 12f;
+        PlayerCameraDistance = 20f;
         playerCamera = GetComponent<Camera>();
     }
 
@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour {
             playerCamera.fieldOfView = Mathf.Clamp(playerCamera.fieldOfView, 15, 100);
         }
 
-        transform.position = new Vector3(cameraTarget.position.x, cameraTarget.position.y + PlayerCameraDistance, cameraTarget.position.z + (PlayerCameraDistance + 5f));
+        transform.position = new Vector3(cameraTarget.position.x, cameraTarget.position.y + PlayerCameraDistance, cameraTarget.position.z + (PlayerCameraDistance + 7f));
 
     }
 }
